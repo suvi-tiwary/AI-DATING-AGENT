@@ -566,6 +566,8 @@ const FALLBACK_SEED_PARTICIPANTS = [
     bio: "Tennis legend, fashion designer, and venture capitalist. Loves karaoke nights, dance fitness, fashion styling, superhero comics, and spending time with family.",
     interests: ["Tennis", "Fashion Design", "Karaoke", "Comic Books", "Venture Investing", "Dance Fitness", "French Language"],
     goals: "Back diverse founders through Serena Ventures and champion athletic excellence.",
+    linkedin_url: "https://www.linkedin.com/in/serenawilliams",
+    instagram_url: "https://www.instagram.com/serenawilliams",
     match_evidence: "Verified Instagram @serenawilliams (17M+ followers) directly connects to Serena Ventures portfolio on LinkedIn.",
     data_source: "Verified public Instagram page & venture capital LinkedIn record.",
     analysis: {
@@ -739,7 +741,7 @@ function renderRoster(participants) {
 
     return `
       <div class="agent-card">
-        <div class="card-top">
+        <div class="card-top" onclick="openProfileModal(${p.id})" style="cursor: pointer;" title="Click to inspect deep profile analysis">
           <div class="agent-avatar-wrap">
             <img src="${p.avatar_url || 'https://api.dicebear.com/7.x/micah/svg?seed=' + p.name}" 
                  class="agent-avatar" 
@@ -760,10 +762,10 @@ function renderRoster(participants) {
         <p class="card-bio">${p.bio || 'Autonomous agent synthesized from public career and lifestyle sources.'}</p>
 
         <div class="card-sources">
-          <a href="${p.linkedin_url}" target="_blank" rel="noopener noreferrer" class="source-link source-linkedin">
+          <a href="${p.linkedin_url}" target="_blank" rel="noopener noreferrer" class="source-link source-linkedin" onclick="event.stopPropagation(); window.open('${p.linkedin_url}', '_blank'); return true;">
             💼 LinkedIn Profile ↗
           </a>
-          <a href="${p.instagram_url}" target="_blank" rel="noopener noreferrer" class="source-link source-instagram">
+          <a href="${p.instagram_url}" target="_blank" rel="noopener noreferrer" class="source-link source-instagram" onclick="event.stopPropagation(); window.open('${p.instagram_url}', '_blank'); return true;">
             📸 Public Instagram ↗
           </a>
         </div>
@@ -951,11 +953,34 @@ async function playDialogueTurns(data, venue) {
   const parts = data.participants || [];
   const nameB = parts[1] ? parts[1].name : "";
 
+  // Read pacing speed from dropdown (default: 2400ms)
+  const speedSel = document.getElementById("dialogue-speed-select");
+  const baseDelay = speedSel ? parseInt(speedSel.value) : 2400;
+
   for (let i = 0; i < dialogue.length; i++) {
     const turn = dialogue[i];
     const isSpeakerB = (turn.speaker === nameB || i % 2 !== 0);
     const chemVal = chemProgression[i] || 75;
 
+    // Show realistic typing animation indicator
+    const typingBubble = document.createElement("div");
+    typingBubble.className = `chat-bubble-wrap ${isSpeakerB ? 'speaker-b' : ''}`;
+    typingBubble.innerHTML = `
+      <img src="${turn.avatar_url || 'https://api.dicebear.com/7.x/micah/svg?seed=' + turn.speaker}" class="bubble-avatar" alt="${turn.speaker}">
+      <div class="bubble-content" style="padding: 0.65rem 1rem; opacity: 0.85;">
+        <span style="font-size: 0.8rem; color: var(--accent-gold); font-style: italic;">
+          💬 ${turn.speaker} is replying...
+        </span>
+      </div>
+    `;
+    stream.appendChild(typingBubble);
+    typingBubble.scrollIntoView({ behavior: "smooth", block: "nearest" });
+
+    // Wait typing time (600ms - 800ms)
+    await new Promise(r => setTimeout(r, Math.min(800, Math.floor(baseDelay * 0.35))));
+    typingBubble.remove();
+
+    // Update Chemistry Meter progressively
     document.getElementById("chem-score-display").textContent = `${chemVal}%`;
     const ring = document.getElementById("chem-ring");
     ring.style.setProperty("--chem-val", chemVal);
@@ -980,7 +1005,8 @@ async function playDialogueTurns(data, venue) {
     stream.appendChild(bubble);
     bubble.scrollIntoView({ behavior: "smooth", block: "nearest" });
 
-    await new Promise(r => setTimeout(r, 650));
+    // Comfortable reading delay so user can actually read the dialogue
+    await new Promise(r => setTimeout(r, baseDelay));
   }
 
   verdictBox.style.display = "block";
@@ -1482,8 +1508,8 @@ function openProfileModal(participantId) {
     </div>
 
     <div style="display: flex; gap: 0.75rem; margin-bottom: 1.25rem;">
-      <a href="${p.linkedin_url}" target="_blank" class="source-link source-linkedin">💼 LinkedIn Public Profile ↗</a>
-      <a href="${p.instagram_url}" target="_blank" class="source-link source-instagram">📸 Instagram Public Profile ↗</a>
+      <a href="${p.linkedin_url}" target="_blank" rel="noopener noreferrer" class="source-link source-linkedin" onclick="event.stopPropagation(); window.open('${p.linkedin_url}', '_blank'); return true;">💼 LinkedIn Public Profile ↗</a>
+      <a href="${p.instagram_url}" target="_blank" rel="noopener noreferrer" class="source-link source-instagram" onclick="event.stopPropagation(); window.open('${p.instagram_url}', '_blank'); return true;">📸 Instagram Public Profile ↗</a>
     </div>
 
     ${p.match_evidence ? `
