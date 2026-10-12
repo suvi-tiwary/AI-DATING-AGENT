@@ -1,0 +1,387 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>CupidAgent | Autonomous AI Agent Dating Network</title>
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link
+    href="https://fonts.googleapis.com/css2?family=Outfit:wght@400;500;600;700;800&family=Plus+Jakarta+Sans:wght@400;500;600;700&display=swap"
+    rel="stylesheet">
+  <link rel="stylesheet" href="styles.css">
+  <link rel="icon"
+    href="data:image/svg+xml,<svg xmlns=%22http://www.w3.org/2000/svg%22 viewBox=%220%22%22><text y=%2222%22 font-size=%2220%22>💘</text></svg>">
+</head>
+
+<body>
+
+  <!-- Navigation -->
+  <header class="header-glass">
+    <div class="logo-group">
+      <div class="logo-heart">💘</div>
+      <div class="brand-name">CupidAgent</div>
+    </div>
+
+    <nav class="nav-tabs">
+      <button class="nav-tab-btn active" data-tab="tab-roster">👥 Agents (25+)</button>
+      <button class="nav-tab-btn" data-tab="tab-arena">🥂 Live Date Arena</button>
+      <button class="nav-tab-btn" data-tab="tab-rankings">🏆 Rankings & Decisions</button>
+      <button class="nav-tab-btn" data-tab="tab-video">🎥 Demo Video</button>
+      <button class="nav-tab-btn" data-tab="tab-ingest">➕ Ingest New Person</button>
+      <button class="nav-tab-btn" data-tab="tab-submission">📋 Submission Helper</button>
+    </nav>
+
+    <div class="header-status">
+      <span class="status-dot"></span>
+      <span id="header-status-text">25+ AI Agents Ready</span>
+    </div>
+  </header>
+
+  <main class="container">
+
+    <!-- Hero Section -->
+    <section class="hero-box">
+      <div class="hero-badge">⚡ The 3-Hour Autonomous Agent Test</div>
+      <h1 class="hero-title">Every Person Has An Agent.<br><span>The Agents Date For Them.</span></h1>
+      <p class="hero-subtitle">
+        Represented exclusively by two sources: official <strong>LinkedIn</strong> and public
+        <strong>Instagram</strong>.
+        Agents analyze personality, banter on romantic dates, evaluate chemistry, and rank ideal fits.
+      </p>
+
+      <div class="stats-grid">
+        <div class="stat-card">
+          <div class="stat-number" id="stat-agents">27</div>
+          <div class="stat-label">Real Verified People</div>
+        </div>
+        <div class="stat-card">
+          <div class="stat-number" id="stat-dates">0</div>
+          <div class="stat-label">Dates Simulated</div>
+        </div>
+        <div class="stat-card">
+          <div class="stat-number" id="stat-chem">86%</div>
+          <div class="stat-label">Avg Compatibility</div>
+        </div>
+        <div class="stat-card">
+          <div class="stat-number">100%</div>
+          <div class="stat-label">Public Sources Only</div>
+        </div>
+      </div>
+    </section>
+
+    <!-- Tab 1: Agent Roster -->
+    <section id="tab-roster" class="tab-content active">
+      <div class="section-header">
+        <div>
+          <h2 class="section-title">Verified Agent Roster</h2>
+          <p class="section-desc">Each autonomous dating agent synthesized from LinkedIn career data and Instagram
+            lifestyle vibe.</p>
+        </div>
+        <button class="btn-primary" onclick="switchTab('tab-ingest')">➕ Add Real Person</button>
+      </div>
+
+      <div class="agents-grid" id="agents-grid-container">
+        <!-- Injected via JavaScript -->
+        <div style="grid-column: 1/-1; text-align: center; padding: 3rem; color: var(--text-muted);">
+          Loading AI Agents...
+        </div>
+      </div>
+    </section>
+
+    <!-- Tab 2: Live Date Arena -->
+    <section id="tab-arena" class="tab-content">
+      <div class="section-header">
+        <div>
+          <h2 class="section-title">Live Date Arena</h2>
+          <p class="section-desc">Watch two autonomous agents go on an authentic first date with unspoken thoughts and
+            live chemistry tracking.</p>
+        </div>
+      </div>
+
+      <div class="simulation-disclaimer">
+        <span>⚠️</span> <strong>AI Simulation Notice:</strong> This interaction is an autonomous AI agent simulation grounded in public LinkedIn & Instagram profiles. The real participants did not meet or speak.
+      </div>
+
+      <div class="arena-card">
+        <div class="arena-controls" style="grid-template-columns: 1fr 1fr 1fr auto auto;">
+          <div class="control-group">
+            <label>Agent A (First Person)</label>
+            <select id="arena-select-a" class="control-select"></select>
+          </div>
+          <div class="control-group">
+            <label>Agent B (Second Person)</label>
+            <select id="arena-select-b" class="control-select"></select>
+          </div>
+          <div class="control-group">
+            <label>Date Venue</label>
+            <select id="arena-select-venue" class="control-select">
+              <option value="Candlelit Speakeasy in SoHo">Candlelit Speakeasy in SoHo</option>
+              <option value="Late-Night Tokyo Omakase">Late-Night Tokyo Omakase</option>
+              <option value="Sunset Beach Walk in Malibu">Sunset Beach Walk in Malibu</option>
+              <option value="Quiet Vinyl Café in Paris">Quiet Vinyl Café in Paris</option>
+              <option value="High-Tech Cyberpunk Arcade">High-Tech Cyberpunk Arcade</option>
+              <option value="Contemporary Art Gallery Vernissage">Art Gallery Vernissage</option>
+            </select>
+          </div>
+          <div>
+            <button id="btn-start-date" class="btn-primary" style="height: 42px; padding: 0 1.25rem;"
+              onclick="startSimulatedDate()">
+              🥂 Start Live Date
+            </button>
+          </div>
+          <div>
+            <select id="arena-replay-select" class="control-select" style="height: 42px; width: 180px;" onchange="replaySavedDate()">
+              <option value="">📂 Replay Saved Date</option>
+            </select>
+          </div>
+        </div>
+
+        <!-- Date Podium -->
+        <div class="date-podium">
+          <div class="agent-podium-card" id="podium-card-a">
+            <img id="podium-avatar-a" src="" class="podium-avatar" alt="Agent A">
+            <h3 class="podium-name" id="podium-name-a">Agent A</h3>
+            <span class="podium-archetype" id="podium-arch-a">Archetype</span>
+          </div>
+
+          <div class="chemistry-center">
+            <div class="chemistry-gauge-ring" id="chem-ring" style="--chem-val: 65;">
+              <div class="chemistry-inner">
+                <span class="chemistry-val" id="chem-score-display">--%</span>
+                <span class="chemistry-label">Chemistry</span>
+              </div>
+            </div>
+            <span class="venue-badge" id="podium-venue-badge">Select Pair to Begin</span>
+          </div>
+
+          <div class="agent-podium-card" id="podium-card-b">
+            <img id="podium-avatar-b" src="" class="podium-avatar" alt="Agent B">
+            <h3 class="podium-name" id="podium-name-b">Agent B</h3>
+            <span class="podium-archetype" id="podium-arch-b">Archetype</span>
+          </div>
+        </div>
+
+        <!-- Chat Stream -->
+        <div class="chat-stream" id="chat-stream-container">
+          <div style="text-align: center; color: var(--text-faint); padding: 2rem;">
+            Click <strong>"Start Live Date"</strong> to launch the date dialogue.
+          </div>
+        </div>
+
+        <!-- Post-Date Verdict -->
+        <div id="verdict-container" style="display: none;"></div>
+      </div>
+    </section>
+
+    <!-- Tab 3: Rankings & Matrix -->
+    <section id="tab-rankings" class="tab-content">
+      <div class="section-header">
+        <div>
+          <h2 class="section-title">Romantic Rankings & Compatibility Matrix</h2>
+          <p class="section-desc">For every person, who fits them best? Computed from mutual passions, life stage, and
+            agent date chemistry.</p>
+        </div>
+        <div style="display: flex; gap: 0.5rem;">
+          <select id="ranking-target-select" class="control-select" style="width: 220px;"
+            onchange="loadIndividualRankings()">
+          </select>
+        </div>
+      </div>
+
+      <!-- Individual Ranked Matches -->
+      <div style="margin-bottom: 2.5rem;">
+        <h3 style="font-family: var(--font-heading); font-size: 1.25rem; margin-bottom: 1rem; color: #fcd34d;">
+          Top Ranked Suitors for <span id="ranking-target-name">Target</span>
+        </h3>
+        <div class="ranked-matches-list" id="individual-ranked-container">
+          <!-- Injected via JS -->
+        </div>
+      </div>
+
+      <!-- Heatmap Compatibility Matrix -->
+      <div>
+        <h3 style="font-family: var(--font-heading); font-size: 1.25rem; margin-bottom: 1rem; color: var(--text-main);">
+          Pairwise Compatibility Matrix Heatmap (All 25+ Agents)
+        </h3>
+        <div class="matrix-card">
+          <table class="matrix-table" id="matrix-table-element">
+            <!-- Injected via JS -->
+          </table>
+        </div>
+      </div>
+    </section>
+
+    <!-- Tab: Demo Video -->
+    <section id="tab-video" class="tab-content">
+      <div class="section-header">
+        <div>
+          <h2 class="section-title">🎥 3-Minute Video Demonstration</h2>
+          <p class="section-desc">Embedded video player for your walkthrough demo. Load a YouTube URL or preview the local demo video.</p>
+        </div>
+      </div>
+
+      <div class="video-card">
+        <div class="video-input-group">
+          <input type="text" id="video-url-input" class="control-input" placeholder="Paste YouTube link (e.g. https://www.youtube.com/watch?v=... or Video ID)">
+          <button class="btn-primary" style="white-space: nowrap; padding: 0.65rem 1.25rem;" onclick="loadVideoEmbed()">
+            ▶ Load & Verify Playback
+          </button>
+          <button class="btn-secondary" style="white-space: nowrap; padding: 0.65rem 1rem;" onclick="resetVideoPlayer()" title="Clear video and show placeholder">
+            ↺ Reset
+          </button>
+        </div>
+
+        <div class="video-player-wrap" id="video-player-container">
+          <div class="video-placeholder-content" id="video-placeholder">
+            <div class="video-play-icon">▶</div>
+            <h3 style="font-family: var(--font-heading); font-size: 1.35rem; margin-bottom: 0.5rem; color: #fff;">Video Demonstration Player</h3>
+            <p style="font-size: 0.88rem; color: var(--text-muted); max-width: 580px; margin-bottom: 1rem;">
+              No pre-recorded link is fabricated. Paste your real YouTube demonstration URL above to load the live player and verify playback prior to submission.
+            </p>
+            <div style="display: flex; gap: 0.75rem;">
+              <button class="btn-secondary" onclick="loadSampleVideoWorkflow()">
+                ℹ️ View 3-Minute Recording Flow
+              </button>
+            </div>
+          </div>
+          <iframe id="video-iframe" style="display: none;" allowfullscreen allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture"></iframe>
+          <video id="video-local-player" controls style="display: none;"></video>
+        </div>
+
+        <div style="margin-top: 1.5rem;">
+          <h4 style="font-family: var(--font-heading); font-size: 1.1rem; color: #fcd34d; margin-bottom: 0.5rem;">
+            ⏱️ Required 3-Minute Video Recording Structure
+          </h4>
+          <div class="video-chapter-list">
+            <div class="video-chapter-card">
+              <div class="video-chapter-time">0:00 – 0:45</div>
+              <div style="font-size: 0.85rem; font-weight: 700; color: #fff; margin-bottom: 0.2rem;">1. Real People Directory</div>
+              <div style="font-size: 0.78rem; color: var(--text-muted);">Show the 25+ real candidates, clicking their verified LinkedIn & Instagram links.</div>
+            </div>
+            <div class="video-chapter-card">
+              <div class="video-chapter-time">0:45 – 1:30</div>
+              <div style="font-size: 0.85rem; font-weight: 700; color: #fff; margin-bottom: 0.2rem;">2. Deep Profile Analysis</div>
+              <div style="font-size: 0.78rem; color: var(--text-muted);">Inspect 2 participant profiles: show extracted hobbies, communication style, needs & vibe radar.</div>
+            </div>
+            <div class="video-chapter-card">
+              <div class="video-chapter-time">1:30 – 2:20</div>
+              <div style="font-size: 0.85rem; font-weight: 700; color: #fff; margin-bottom: 0.2rem;">3. Live Agent Dating</div>
+              <div style="font-size: 0.78rem; color: var(--text-muted);">Launch a date in the Live Arena: show turn-by-turn dialogue, internal thoughts & rising chemistry meter.</div>
+            </div>
+            <div class="video-chapter-card">
+              <div class="video-chapter-time">2:20 – 3:00</div>
+              <div style="font-size: 0.85rem; font-weight: 700; color: #fff; margin-bottom: 0.2rem;">4. Rankings & Decisions</div>
+              <div style="font-size: 0.78rem; color: var(--text-muted);">Show personalized rankings with explanations, and demonstrate the Accept / Reject match decision.</div>
+            </div>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <!-- Tab 4: Ingest New Person -->
+    <section id="tab-ingest" class="tab-content">
+      <div class="section-header">
+        <div>
+          <h2 class="section-title">Ingest Any Real Person</h2>
+          <p class="section-desc">Paste official LinkedIn and public Instagram URLs. The scraper will extract career and
+            aesthetic attributes to spawn an AI agent.</p>
+        </div>
+      </div>
+
+      <div class="ingest-card">
+        <form id="ingest-form" onsubmit="handleIngestSubmit(event)">
+          <div class="form-group">
+            <label>LinkedIn Public Profile URL *</label>
+            <input type="url" id="ingest-linkedin" required placeholder="https://www.linkedin.com/in/username">
+          </div>
+          <div class="form-group">
+            <label>Instagram Public Profile URL *</label>
+            <input type="url" id="ingest-instagram" required placeholder="https://www.instagram.com/username">
+          </div>
+          <div class="form-group">
+            <label>Full Name (Optional Override)</label>
+            <input type="text" id="ingest-name" placeholder="Leave blank to auto-detect from profiles">
+          </div>
+          <div class="form-group">
+            <label>Age (Optional)</label>
+            <input type="number" id="ingest-age" min="18" max="100" placeholder="e.g. 29">
+          </div>
+
+          <button type="submit" id="btn-submit-ingest" class="btn-primary"
+            style="width: 100%; padding: 0.85rem; font-size: 1rem;">
+            🚀 Ingest & Spawn AI Dating Agent
+          </button>
+        </form>
+
+        <div class="ingest-progress" id="ingest-progress-box">
+          <div class="progress-step" id="step-1"><span>⏳</span> 1. Querying Instagram public endpoints for aesthetics &
+            avatar...</div>
+          <div class="progress-step" id="step-2"><span>⏳</span> 2. Parsing LinkedIn OpenGraph metadata & career
+            credentials...</div>
+          <div class="progress-step" id="step-3"><span>⏳</span> 3. Synthesizing psychological dating persona & love
+            languages...</div>
+          <div class="progress-step" id="step-4"><span>⏳</span> 4. Registering Agent in Autonomous Dating Network...
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <!-- Tab 5: Submission Helper -->
+    <section id="tab-submission" class="tab-content">
+      <div class="section-header">
+        <div>
+          <h2 class="section-title">Test Submission Kit & Checklist</h2>
+          <p class="section-desc">Everything needed to fill in the final submission form, recorded video checklist, and
+            technical explanations.</p>
+        </div>
+      </div>
+
+      <div class="helper-box">
+        <div class="copy-block">
+          <div class="copy-label">
+            <span>Overall Explanation (&lt;= 200 chars - Exact: 199 chars)</span>
+            <button class="btn-copy" onclick="copyText('copy-overall')">Copy Text</button>
+          </div>
+          <div class="copy-content" id="copy-overall">Autonomous dating network where 26 verified real people are represented by AI agents from LinkedIn & public Instagram. Agents simulate live dates, evaluate chemistry, and rank romantic compatibility.</div>
+        </div>
+
+        <div class="copy-block">
+          <div class="copy-label">
+            <span>Technical Section (&lt;= 500 chars - Exact: 494 chars)</span>
+            <button class="btn-copy" onclick="copyText('copy-tech')">Copy Text</button>
+          </div>
+          <div class="copy-content" id="copy-tech">FastAPI, SQLite, and Vanilla JS stack. Ingests LinkedIn and Instagram metadata via httpx and BeautifulSoup4 OpenGraph parsing with resilient persona fallback. AI dating agents simulate turn-by-turn dialogue, internal thoughts, and dynamic chemistry scoring via Groq LLM (Llama-3.3-70B) or local state machine. Features pairwise compatibility rankings with concrete rationale, mutual match decisions, saved date replay, and verified dataset of 26 real participants with identity proof.</div>
+        </div>
+
+        <div class="copy-block">
+          <div class="copy-label">
+            <span>⏱️ 3-Minute YouTube Video Recording Checklist (&lt; 3 mins)</span>
+          </div>
+          <ul style="padding-left: 1.25rem; font-size: 0.88rem; color: var(--text-muted); line-height: 1.8;">
+            <li>✅ <strong>Chapter 1 (0:00 - 0:45) - 25+ Real People Directory</strong>: Showcase the 26 real participant cards in the AI Roster tab, opening LinkedIn and Instagram URLs to verify genuine public accounts.</li>
+            <li>✅ <strong>Chapter 2 (0:45 - 1:30) - Profile Analysis & Archetypes</strong>: Click "Inspect Dating Analysis" on 2 profiles to show extracted communication styles, hobbies, romantic archetypes, and the 6-dimension Vibe Radar.</li>
+            <li>✅ <strong>Chapter 3 (1:30 - 2:20) - Live Agent-to-Agent Date Simulation</strong>: In the "Date Room", pick two participants and a venue, then run "Commence Autonomous Date" to display turn-by-turn dialogue, internal thoughts, and dynamic chemistry gauge.</li>
+            <li>✅ <strong>Chapter 4 (2:20 - 3:00) - Rankings & Mutual Match Decisions</strong>: In "Rankings & Decisions", select a participant to inspect ranked suitors with explanations, and click "Accept" on both sides to show the persistent "Mutual Match" banner.</li>
+          </ul>
+        </div>
+      </div>
+    </section>
+
+  </main>
+
+  <!-- Deep Profile Analysis Modal -->
+  <div class="modal-overlay" id="profile-modal" onclick="closeProfileModal(event)">
+    <div class="modal-dialog" onclick="event.stopPropagation()">
+      <button class="modal-close-btn" onclick="closeProfileModal()">✕</button>
+      <div id="modal-content-area">
+        <!-- Injected via JS -->
+      </div>
+    </div>
+  </div>
+
+  <script src="app.js"></script>
+</body>
+
+</html>
