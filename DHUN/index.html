@@ -1,0 +1,609 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>DHUN'26 Registration — Abhimanyuu & Solfege Live, 17 Oct 2026 | VSOB Greater Noida</title>
+  <meta name="description" content="Register for DHUN'26 with Abhimanyuu & Solfege live music night at Vishveshwarya School of Business, Greater Noida. Get your instant verified entry card.">
+  <meta name="theme-color" content="#0f2044">
+  
+  <!-- Favicon -->
+  <link rel="icon" type="image/webp" href="./assets/logo.webp">
+  
+  <!-- CSS Stylesheet -->
+  <link rel="stylesheet" href="./style.css">
+  
+  <!-- FontAwesome Icons for crisp UI icons -->
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.1/css/all.min.css">
+</head>
+<body>
+
+  <!-- Top Announcement & Helpline Bar -->
+  <div class="top-bar">
+    <div class="top-bar-inner">
+      <div class="top-bar-badge">
+        <span class="top-bar-pulse"></span>
+        <span>DHUN'26 OFFICIAL REGISTRATION PORTAL · VSOB CAMPUS</span>
+      </div>
+      <div class="top-bar-contacts">
+        <a href="mailto:admissions@vgi.ac.in"><i class="fa-solid fa-envelope"></i> admissions@vgi.ac.in</a>
+        <a href="tel:+918130293785"><i class="fa-solid fa-phone"></i> +91 81302 93785</a>
+        <a href="tel:18008430400"><i class="fa-solid fa-headset"></i> 1800 843 0400 (Toll Free)</a>
+      </div>
+    </div>
+  </div>
+
+  <!-- Main Institutional Navigation Header -->
+  <header class="site-header">
+    <div class="header-inner">
+      <div class="brand-wrapper">
+        <img src="./assets/logo.webp" alt="Vishveshwarya School of Business Logo" class="brand-logo" onerror="this.style.display='none'">
+        <div class="brand-divider"></div>
+        <div class="brand-tagline">
+          <span class="brand-title">Vishveshwarya School of Business</span>
+          <span class="brand-sub">Greater Noida · 65-Acre Residential Campus</span>
+        </div>
+      </div>
+      <nav class="nav-actions">
+        <a href="#event-details" class="nav-link"><i class="fa-solid fa-music"></i> Event Details</a>
+        <a href="#find-registration" class="nav-link"><i class="fa-solid fa-search"></i> Find ID</a>
+        <a href="#reg-form-anchor" class="nav-pill-btn"><i class="fa-solid fa-ticket"></i> Get Pass</a>
+      </nav>
+    </div>
+  </header>
+
+  <!-- Hero Event Banner Section -->
+  <section class="hero-stage" id="event-details">
+    <h1 class="sr-only" style="position:absolute;width:1px;height:1px;overflow:hidden;clip:rect(0,0,0,0);">
+      DHUN'26 Registration — Abhimanyuu & Solfege Live, 17 Oct 2026 | VSOB Greater Noida
+    </h1>
+    <div class="hero-banner-container">
+      <img src="./assets/banner.webp" alt="Vishveshwarya School of Business organises DHUN'26 with Abhimanyuu & Solfege, Saturday, 17 October 2026" class="hero-banner-img">
+    </div>
+  </section>
+
+  <!-- Main Registration Form & Details Grid -->
+  <main class="main-section" id="reg-form-anchor">
+    <div class="container-site">
+      <div class="registration-grid">
+        
+        <!-- Left Column: Form & Generated Card View -->
+        <div class="left-content-column">
+          
+          <!-- State 1: Registration Form Card -->
+          <div class="form-card" id="form-card-container">
+            <div class="form-header">
+              <p class="section-label">Registration details</p>
+              <h2 class="section-title">Fill in and pay</h2>
+              <p class="section-desc">
+                One registration admits one person. Your verified Registration Card appears here as soon as you submit.
+              </p>
+              <a href="#find-registration" class="find-link">
+                <i class="fa-solid fa-magnifying-glass"></i> Already registered? Find your Registration ID
+              </a>
+            </div>
+
+            <form id="dhun-registration-form" class="reg-form" novalidate>
+              
+              <!-- Full Name -->
+              <div class="field-group" id="group-name">
+                <div class="field-wrapper">
+                  <i class="fa-regular fa-user field-icon"></i>
+                  <input type="text" id="r-name" name="name" class="text-field" placeholder=" " maxlength="80" required autocomplete="name">
+                  <label for="r-name" class="floating-label">Full Name *</label>
+                </div>
+                <span class="field-error-msg" id="err-name">Please enter your full name.</span>
+              </div>
+
+              <!-- Father's Name -->
+              <div class="field-group" id="group-father">
+                <div class="field-wrapper">
+                  <i class="fa-solid fa-users field-icon"></i>
+                  <input type="text" id="r-father" name="fatherName" class="text-field" placeholder=" " maxlength="80" required>
+                  <label for="r-father" class="floating-label">Father's Name *</label>
+                </div>
+                <span class="field-error-msg" id="err-father">Please enter father's name.</span>
+              </div>
+
+              <!-- Mobile Number -->
+              <div class="field-group" id="group-mobile">
+                <div class="field-wrapper">
+                  <div class="mobile-input-wrapper">
+                    <span class="mobile-prefix">+91</span>
+                    <input type="tel" id="r-mobile" name="mobile" class="mobile-field" inputmode="numeric" maxlength="10" placeholder="10-digit mobile" required autocomplete="tel-national">
+                  </div>
+                  <label for="r-mobile" class="notched-label">Mobile *</label>
+                </div>
+                <span class="field-error-msg" id="err-mobile">Enter a valid 10-digit mobile number.</span>
+              </div>
+
+              <!-- Email -->
+              <div class="field-group" id="group-email">
+                <div class="field-wrapper">
+                  <i class="fa-regular fa-envelope field-icon"></i>
+                  <input type="email" id="r-email" name="email" class="text-field" placeholder=" " maxlength="100" required autocomplete="email">
+                  <label for="r-email" class="floating-label">Email *</label>
+                </div>
+                <span class="field-error-msg" id="err-email">Enter a valid email address.</span>
+              </div>
+
+              <!-- College ID -->
+              <div class="field-group" id="group-college-id">
+                <div class="field-wrapper">
+                  <i class="fa-regular fa-id-card field-icon"></i>
+                  <input type="text" id="r-college-id" name="collegeId" class="text-field uppercase-field" placeholder=" " maxlength="50" required autocomplete="off" style="text-transform: uppercase;">
+                  <label for="r-college-id" class="floating-label">College ID *</label>
+                </div>
+                <p class="field-helper">As printed on your college ID card</p>
+                <span class="field-error-msg" id="err-college-id">Enter your College ID (e.g. VGI2026-081).</span>
+              </div>
+
+              <!-- Programme Dropdown -->
+              <div class="field-group" id="group-program">
+                <div class="field-wrapper">
+                  <i class="fa-solid fa-graduation-cap field-icon"></i>
+                  <select id="r-program" name="program" class="select-field" required>
+                    <option value="">Select your programme</option>
+                    <option value="PGDM">PGDM — Post Graduate Diploma in Management</option>
+                    <option value="MBA">MBA — Master of Business Administration</option>
+                    <option value="BTECH_CSE">B.Tech — Computer Science & Engineering (CSE)</option>
+                    <option value="BTECH_AIML">B.Tech — Artificial Intelligence & ML</option>
+                    <option value="BTECH_DS">B.Tech — Data Science</option>
+                    <option value="BTECH_MECH">B.Tech — Mechanical Engineering</option>
+                    <option value="BTECH_CIVIL">B.Tech — Civil Engineering</option>
+                    <option value="BCA">BCA — Bachelor of Computer Applications</option>
+                    <option value="BBA">BBA — Bachelor of Business Administration</option>
+                    <option value="BPHARMA">B.Pharma / D.Pharma</option>
+                    <option value="POLYTECHNIC">Polytechnic / Diploma in Engineering</option>
+                    <option value="__other">Other / Guest Attendee</option>
+                  </select>
+                  <i class="fa-solid fa-chevron-down select-arrow"></i>
+                  <label for="r-program" class="notched-label">Programme *</label>
+                </div>
+                <span class="field-error-msg" id="err-program">Please select your programme.</span>
+              </div>
+
+              <!-- Dynamic Branch or Organisation (revealed based on selection) -->
+              <div class="field-group grid-full" id="group-branch-container">
+                <div class="field-wrapper">
+                  <i class="fa-solid fa-sitemap field-icon"></i>
+                  <select id="r-branch" name="branch" class="select-field">
+                    <option value="General">Select Branch / Specialisation</option>
+                    <option value="Marketing & Analytics">Marketing & Analytics</option>
+                    <option value="Finance & FinTech">Finance & FinTech</option>
+                    <option value="HR & Operations">HR & Operations</option>
+                    <option value="Artificial Intelligence">Artificial Intelligence</option>
+                    <option value="Core Engineering">Core Engineering</option>
+                    <option value="General Shift">General Shift</option>
+                  </select>
+                  <i class="fa-solid fa-chevron-down select-arrow"></i>
+                  <label for="r-branch" class="notched-label">Branch / Specialisation</label>
+                </div>
+              </div>
+
+              <!-- Guest Organisation Input (shown if Other/Guest selected) -->
+              <div class="field-group grid-full" id="group-org-container" style="display: none;">
+                <div class="field-wrapper">
+                  <i class="fa-solid fa-building-columns field-icon"></i>
+                  <input type="text" id="r-org" name="org" class="text-field" placeholder=" " maxlength="100">
+                  <label for="r-org" class="floating-label">College / Organisation Name (Optional)</label>
+                </div>
+              </div>
+
+              <!-- Optional Photo Upload for Card Customization -->
+              <div class="field-group grid-full" style="background:#fafbfe; border: 1px dashed var(--color-border); border-radius: var(--radius); padding: 0.85rem 1rem;">
+                <div style="display: flex; align-items: center; justify-content: space-between; flex-wrap: wrap; gap: 0.5rem;">
+                  <div style="display: flex; align-items: center; gap: 0.75rem;">
+                    <div id="avatar-preview" style="width: 44px; height: 44px; border-radius: 50%; background: var(--color-copper-soft); color: var(--color-copper-dark); display: flex; align-items: center; justify-content: center; font-weight: 800; font-size: 1.1rem; overflow: hidden; border: 2px solid #ffffff; box-shadow: 0 2px 6px rgba(0,0,0,0.1);">
+                      <i class="fa-solid fa-camera"></i>
+                    </div>
+                    <div>
+                      <p style="font-size: 0.85rem; font-weight: 700; color: var(--color-navy); margin: 0;">Pass Photo / Avatar (Optional)</p>
+                      <p style="font-size: 0.75rem; color: var(--color-text-muted); margin: 0;">Upload a picture to show on your concert entry card</p>
+                    </div>
+                  </div>
+                  <label for="r-photo" style="cursor: pointer; background: #ffffff; border: 1px solid var(--color-border); padding: 0.4rem 0.85rem; border-radius: var(--radius-sm); font-size: 0.8rem; font-weight: 700; color: var(--color-navy); display: inline-flex; align-items: center; gap: 0.35rem; transition: all 0.2s;">
+                    <i class="fa-solid fa-upload"></i> Choose Photo
+                    <input type="file" id="r-photo" accept="image/*" style="display: none;">
+                  </label>
+                </div>
+              </div>
+
+              <!-- Payment Method Section (Visible, Accepts Dummy, Non-Mandatory / Skipped) -->
+              <div class="grid-full payment-section-box">
+                <div class="payment-section-header">
+                  <span class="payment-badge"><i class="fa-solid fa-shield-halved"></i> Payment Method (Non-Mandatory)</span>
+                  <span class="payment-badge skip-badge"><i class="fa-solid fa-circle-check"></i> Dummy Mode Active · Auto-Accepted</span>
+                </div>
+
+                <div class="payment-summary-table">
+                  <div>
+                    <div class="payment-item-label">DHUN'26 Pass Entry Fee</div>
+                    <div class="payment-item-sub">One live concert entry · Abhimanyuu & Solfege</div>
+                  </div>
+                  <div class="payment-item-price">₹200</div>
+                </div>
+
+                <!-- Payment Mode Selection (Standard Dummy UPI / Instant Bypass) -->
+                <div class="payment-options-row">
+                  <label class="payment-mode-radio active" id="mode-instant-label">
+                    <input type="radio" name="paymentMode" value="instant" checked>
+                    <div>
+                      <strong>Instant Pass (Payment Skipped)</strong>
+                      <div style="font-size: 0.72rem; color: var(--color-text-muted);">Directly generates verified entry card</div>
+                    </div>
+                  </label>
+
+                  <label class="payment-mode-radio" id="mode-dummy-label">
+                    <input type="radio" name="paymentMode" value="dummy">
+                    <div>
+                      <strong>Mock UPI / Card (Dummy)</strong>
+                      <div style="font-size: 0.72rem; color: var(--color-text-muted);">Accepts any dummy reference</div>
+                    </div>
+                  </label>
+                </div>
+
+                <!-- Dummy reference input (optional, accepts anything) -->
+                <div id="dummy-ref-container" style="display: none; margin-bottom: 0.85rem;">
+                  <div class="field-wrapper">
+                    <i class="fa-solid fa-money-bill-transfer field-icon"></i>
+                    <input type="text" id="r-dummy-ref" class="text-field" placeholder=" " value="UPI-SUCCESS-99214">
+                    <label for="r-dummy-ref" class="floating-label">Dummy UPI ID / Ref (Accepts anything)</label>
+                  </div>
+                  <p class="field-helper">Enter anything or keep default — payment is non-mandatory.</p>
+                </div>
+
+                <div class="payment-skip-note">
+                  <i class="fa-solid fa-circle-info" style="margin-top: 0.15rem; color: #2563eb; flex-shrink: 0;"></i>
+                  <span><strong>No Payment Required:</strong> The ₹200 fee is displayed for official pricing layout, but actual payment is skipped and non-mandatory. Clicking register immediately approves and generates your official entry card.</span>
+                </div>
+
+                <div class="payment-methods-icons">
+                  <span>Supported methods:</span>
+                  <span class="gateway-chip"><i class="fa-brands fa-google-pay"></i> GPay</span>
+                  <span class="gateway-chip"><i class="fa-solid fa-mobile-screen"></i> PhonePe</span>
+                  <span class="gateway-chip"><i class="fa-solid fa-wallet"></i> Paytm</span>
+                  <span class="gateway-chip"><i class="fa-regular fa-credit-card"></i> Cards & Net Banking</span>
+                </div>
+              </div>
+
+              <!-- Submit Button and Terms -->
+              <div class="grid-full submit-row">
+                <button type="submit" id="btn-submit-reg" class="btn-primary">
+                  <i class="fa-solid fa-lock"></i>
+                  <span id="btn-submit-text">Pay ₹200 and register</span>
+                </button>
+                <p class="legal-text">
+                  By clicking register you agree to DHUN'26
+                  <a href="#">Terms</a>, <a href="#">Privacy</a> and <a href="#">Refund</a> policies. Pass is issued instantly.
+                </p>
+              </div>
+
+            </form>
+          </div>
+
+          <!-- State 2: Success & Generated Event Card (Shown after filling info) -->
+          <div class="success-container" id="success-card-container">
+            
+            <div class="success-badge-header">
+              <div class="success-icon-wrap">
+                <i class="fa-solid fa-check"></i>
+              </div>
+              <h2 class="success-title">You are registered</h2>
+              <p class="success-sub" id="success-welcome-msg">
+                Thank you! See you at DHUN'26.
+              </p>
+            </div>
+
+            <!-- THE EVENT PASS CARD (REALISTIC VIP PASS THAT USER CAN SHOW AT VENUE) -->
+            <div class="event-pass-card-wrapper" id="printable-pass-card">
+              <div class="pass-card">
+                
+                <!-- Lanyard Clip Hole -->
+                <div class="lanyard-slot"></div>
+
+                <!-- Pass Header -->
+                <div class="pass-top-row">
+                  <div class="pass-org-brand">
+                    <span class="pass-org-name">Vishveshwarya School of Business</span>
+                    <span class="pass-event-title">DHUN'26 LIVE</span>
+                  </div>
+                  <div class="pass-security-badge">
+                    <i class="fa-solid fa-circle-check"></i> Confirmed Pass
+                  </div>
+                </div>
+
+                <!-- Registration ID Box -->
+                <div class="pass-id-box">
+                  <div class="pass-id-label">OFFICIAL REGISTRATION ID</div>
+                  <div class="pass-id-number" id="card-reg-id">DHUN26-VSOB-000000</div>
+                  <div class="pass-id-event-tag">DHUN'26 · Saturday, 17 October 2026</div>
+                </div>
+
+                <!-- Pass Attendee Details -->
+                <div class="pass-details-grid">
+                  <div class="pass-detail-cell" style="grid-column: span 2;">
+                    <span class="pass-cell-label">Attendee Name</span>
+                    <span class="pass-cell-value highlight-name" id="card-name">—</span>
+                  </div>
+
+                  <div class="pass-detail-cell">
+                    <span class="pass-cell-label">Father's Name</span>
+                    <span class="pass-cell-value" id="card-father">—</span>
+                  </div>
+
+                  <div class="pass-detail-cell">
+                    <span class="pass-cell-label">College / Roll ID</span>
+                    <span class="pass-cell-value" id="card-college-id" style="color: var(--color-copper-bright); font-family: var(--font-numeric);">—</span>
+                  </div>
+
+                  <div class="pass-detail-cell">
+                    <span class="pass-cell-label">Programme</span>
+                    <span class="pass-cell-value" id="card-program">—</span>
+                  </div>
+
+                  <div class="pass-detail-cell">
+                    <span class="pass-cell-label">Branch / Org</span>
+                    <span class="pass-cell-value" id="card-branch">—</span>
+                  </div>
+
+                  <div class="pass-detail-cell">
+                    <span class="pass-cell-label">Mobile Number</span>
+                    <span class="pass-cell-value" id="card-mobile">—</span>
+                  </div>
+
+                  <div class="pass-detail-cell">
+                    <span class="pass-cell-label">Status & Amount</span>
+                    <span class="pass-cell-value" style="color: #34d399;">₹200 (Paid / Verified)</span>
+                  </div>
+                </div>
+
+                <!-- Scannable QR Code and Gate Info -->
+                <div class="pass-qr-row">
+                  <div class="pass-qr-box" id="pass-qr-container">
+                    <!-- QR Code Canvas injected here -->
+                  </div>
+                  <div class="pass-gate-info">
+                    <div class="pass-gate-title"><i class="fa-solid fa-door-open"></i> Gate Entry: MAIN ARENA</div>
+                    <div class="pass-gate-desc">
+                      Show this digital pass with your Photo/College ID at the entry gate.
+                    </div>
+                    <div style="font-size: 0.675rem; color: #aab6d3; margin-top: 0.2rem;">
+                      <i class="fa-solid fa-microphone-lines"></i> Performing: Abhimanyuu & Solfege
+                    </div>
+                  </div>
+                </div>
+
+                <!-- Footer Barcode & Hologram Security Strip -->
+                <div class="pass-footer-barcode">
+                  <span class="security-strip" id="card-security-hash">AUTH-VSOB-99812</span>
+                  <span>VSOB CAMPUS · NH-91 GT ROAD</span>
+                </div>
+
+              </div>
+            </div>
+
+            <!-- Pass Action Buttons -->
+            <div class="pass-actions-row">
+              <button type="button" id="btn-download-pass" class="btn-pass-action btn-download-pass">
+                <i class="fa-solid fa-download"></i> Download Pass (PNG)
+              </button>
+              
+              <button type="button" id="btn-print-pass" class="btn-pass-action btn-print-pass">
+                <i class="fa-solid fa-print"></i> Print / Save as PDF
+              </button>
+
+              <button type="button" id="btn-gate-view" class="btn-pass-action btn-fullscreen-pass">
+                <i class="fa-solid fa-mobile-screen"></i> Show at Gate (Full Screen)
+              </button>
+
+              <button type="button" id="btn-register-another" class="btn-pass-action btn-new-reg">
+                <i class="fa-solid fa-user-plus"></i> Register Another Person
+              </button>
+            </div>
+
+            <p class="pass-gate-reminder">
+              <i class="fa-solid fa-camera"></i> Take a screenshot or download this pass. Show the Registration ID with your photo ID at the entrance gate.
+            </p>
+
+          </div>
+
+        </div>
+
+        <!-- Right Column: Sticky Event Details & Pricing Sidebar -->
+        <aside class="event-sidebar">
+          <div class="sidebar-glow"></div>
+          
+          <p class="sidebar-kicker">DHUN'26 · A live music night</p>
+          <p class="sidebar-price">₹200</p>
+          <p class="sidebar-price-sub">Per person · one entry</p>
+
+          <div class="sidebar-details-list">
+            <div class="sidebar-detail-item">
+              <i class="fa-regular fa-calendar-days sidebar-icon"></i>
+              <div>
+                <strong>Saturday, 17 October 2026</strong>
+                <span>Gates open at 5:00 PM</span>
+              </div>
+            </div>
+
+            <div class="sidebar-detail-item">
+              <i class="fa-solid fa-microphone sidebar-icon"></i>
+              <div>
+                <strong>Performing Live:</strong>
+                <span style="color:#ffffff; font-weight:700;">Abhimanyuu & Solfege</span>
+              </div>
+            </div>
+
+            <div class="sidebar-detail-item">
+              <i class="fa-solid fa-location-dot sidebar-icon"></i>
+              <div>
+                <strong>Vishveshwarya Campus</strong>
+                <span>G.T. Road, NH-91, New Noida, Gautam Buddha Nagar (U.P.) 201314</span>
+              </div>
+            </div>
+          </div>
+
+          <ul class="sidebar-checklist">
+            <li>
+              <i class="fa-solid fa-circle-check"></i>
+              <span>One registration admits one person</span>
+            </li>
+            <li>
+              <i class="fa-solid fa-circle-check"></i>
+              <span>Registration ID and Entry Card generated immediately</span>
+            </li>
+            <li>
+              <i class="fa-solid fa-circle-check"></i>
+              <span>Show the digital card or QR code at the entry gate</span>
+            </li>
+            <li>
+              <i class="fa-solid fa-shield-halved"></i>
+              <span>Instant approval · Payment non-mandatory</span>
+            </li>
+          </ul>
+
+          <a href="#find-registration" class="btn-sidebar-find">
+            <i class="fa-solid fa-magnifying-glass"></i> Already registered? Find my Registration ID
+          </a>
+        </aside>
+
+      </div>
+    </div>
+  </main>
+
+  <!-- Find Registration Section (Matches vsob.in/dhun-26) -->
+  <section id="find-registration" class="find-section">
+    <div class="container-site">
+      <div class="find-card">
+        <p class="section-label">Already registered?</p>
+        <h2 class="section-title">Find my Registration ID</h2>
+        <p class="section-desc">
+          Lost or forgot to save it? Enter the mobile number and email you registered with — both must match.
+        </p>
+
+        <form id="find-registration-form" class="find-form" novalidate>
+          <div class="field-group" id="f-group-mobile">
+            <div class="field-wrapper">
+              <div class="mobile-input-wrapper">
+                <span class="mobile-prefix">+91</span>
+                <input type="tel" id="f-mobile" class="mobile-field" inputmode="numeric" maxlength="10" placeholder="Registered mobile" required>
+              </div>
+              <label for="f-mobile" class="notched-label">Mobile *</label>
+            </div>
+          </div>
+
+          <div class="field-group" id="f-group-email">
+            <div class="field-wrapper">
+              <i class="fa-regular fa-envelope field-icon"></i>
+              <input type="email" id="f-email" class="text-field" placeholder=" " maxlength="100" required>
+              <label for="f-email" class="floating-label">Email *</label>
+            </div>
+          </div>
+
+          <button type="submit" class="btn-find-submit" id="btn-find-submit">
+            <i class="fa-solid fa-magnifying-glass"></i> Find Pass
+          </button>
+        </form>
+
+        <!-- Search Result Box -->
+        <div class="find-result-box" id="find-result-box">
+          <div class="find-result-card" id="find-result-content">
+            <!-- Dynamic search results populated here -->
+          </div>
+        </div>
+
+      </div>
+    </div>
+  </section>
+
+  <!-- Full Screen Gate Pass Modal (For showing directly to security guards) -->
+  <div class="gate-modal-backdrop" id="gate-modal">
+    <div class="gate-modal-content">
+      <button type="button" class="gate-modal-close" id="gate-modal-close" aria-label="Close modal">
+        <i class="fa-solid fa-xmark"></i>
+      </button>
+
+      <div style="font-size: 0.75rem; font-weight: 800; letter-spacing: 0.1em; color: var(--color-copper-bright); text-transform: uppercase;">
+        DHUN'26 ENTRY PASS
+      </div>
+
+      <div style="font-size: 1.5rem; font-weight: 800; color: #ffffff; margin-top: 0.25rem;" id="modal-attendee-name">
+        ATTENDEE
+      </div>
+
+      <div style="font-family: var(--font-numeric); font-size: 1.25rem; font-weight: 800; color: #fbbf24; margin-top: 0.25rem;" id="modal-reg-id">
+        DHUN26-VSOB-000000
+      </div>
+
+      <div class="gate-modal-qr" id="modal-qr-container">
+        <!-- Big QR Code rendered here -->
+      </div>
+
+      <div style="background: rgba(16, 185, 129, 0.2); border: 1px solid #10b981; border-radius: var(--radius-sm); padding: 0.5rem; font-size: 0.8125rem; font-weight: 700; color: #34d399; margin-top: 0.5rem;">
+        <i class="fa-solid fa-circle-check"></i> VERIFIED & AUTHORISED ENTRY
+      </div>
+
+      <div style="margin-top: 0.75rem; font-size: 0.75rem; color: #aab6d3;">
+        Saturday, 17 October 2026 · Vishveshwarya Campus NH-91
+      </div>
+    </div>
+  </div>
+
+  <!-- Footer -->
+  <footer class="site-footer">
+    <div class="container-site">
+      <div class="footer-grid">
+        <div>
+          <h3 class="footer-col-title">Vishveshwarya School of Business</h3>
+          <p style="line-height: 1.6; margin-bottom: 0.75rem;">
+            Part of Vishveshwarya Group of Institutions (VGI), Greater Noida. Established in 2000, offering world-class management and engineering education across a lush 65-acre residential campus.
+          </p>
+          <p style="font-size: 0.8125rem; color: #aab6d3;">
+            <i class="fa-solid fa-location-dot"></i> Ghaziabad-Bulandshahar G.T. Road, NH-91, Greater Noida Phase-II, U.P. 201314
+          </p>
+        </div>
+
+        <div>
+          <h4 class="footer-col-title">Quick Links</h4>
+          <ul class="footer-links-list">
+            <li><a href="#event-details">About DHUN'26</a></li>
+            <li><a href="#reg-form-anchor">Event Registration</a></li>
+            <li><a href="#find-registration">Find Registration ID</a></li>
+            <li><a href="https://vsob.in" target="_blank" rel="noopener">VSOB Official Website</a></li>
+          </ul>
+        </div>
+
+        <div>
+          <h4 class="footer-col-title">Help & Admissions</h4>
+          <ul class="footer-links-list">
+            <li><i class="fa-solid fa-phone"></i> +91 81302 93785</li>
+            <li><i class="fa-solid fa-headset"></i> 1800 843 0400</li>
+            <li><i class="fa-solid fa-envelope"></i> admissions@vgi.ac.in</li>
+            <li><i class="fa-brands fa-whatsapp"></i> WhatsApp Support</li>
+          </ul>
+        </div>
+      </div>
+
+      <div class="footer-bottom-bar">
+        <div>
+          © 2026 Vishveshwarya School of Business / Vishveshwarya Group of Institutions. All rights reserved.
+        </div>
+        <div style="display: flex; gap: 1rem;">
+          <a href="#">Terms of Use</a>
+          <a href="#">Privacy Policy</a>
+          <a href="#">Refund Policy</a>
+        </div>
+      </div>
+    </div>
+  </footer>
+
+  <!-- Scripts: Local Standalone Libraries and Main Application -->
+  <script src="./assets/qrcode.min.js"></script>
+  <script src="./assets/html2canvas.min.js"></script>
+  <!-- Confetti script for celebration -->
+  <script src="./assets/confetti.min.js"></script>
+  <script src="./main.js"></script>
+
+</body>
+</html>
